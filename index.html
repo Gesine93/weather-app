@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
-    <title>Library</title>
+    <title>Weather App</title>
 </head>
 <body>
     <div class="toggle">
@@ -15,13 +15,26 @@
         <form action="" method="post">
             <div>
                 <label for="location">Location</label>
-                <input type="text" name="loaction" id="location" required>
+                <input type="text" name="location" id="location" required>
             </div>
             <button class="submit" type="submit">Get weather</button>
         </form>
     </div>
     <div class="weather">
         <div class="today">
+            <div class="left">
+                <p id="today">Today</p>
+                <p id="text"></p>
+                <p id="mintemp"></p>
+                <p id="maxtemp"></p>
+            </div>
+            <div class="center">
+                <img id="iconnow">
+            </div>
+            <div class="right">
+                <p id="time"></p>
+                <p id="temp"></p>
+            </div>
         </div>
         <div class="forecast">
             <div class="one">
