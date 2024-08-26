@@ -5,6 +5,9 @@ body {
     flex-direction: column;
     align-items: center;
     row-gap: 50px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
 }
 
 
@@ -13,6 +16,7 @@ form {
     display: flex;
     justify-content: space-between;
     column-gap: 5vw;
+    color: black;
 }
 
 .search {
@@ -22,6 +26,7 @@ form {
 
 input {
     width: 50vw;
+    border-radius: 5px;
 }
 
 .weather {
@@ -34,9 +39,43 @@ input {
 
 .today {
     display: grid;
-    grid-template-columns: 50% 25% 25%;
+    grid-template-columns: 45% 25% 30%;
+    align-items: center;
 }
 
 p {
     margin: 0;
+}
+
+#iconnow {
+    width: min(70%, 12rem);
+    padding-left: 5%;
+    padding-right: 2%;
+    box-sizing: border-box;
+}
+
+#today {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+#temp {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+#city {
+    color: black;
 }
