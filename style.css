@@ -1,0 +1,42 @@
+body {
+    padding: 10px 10vw;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+}
+
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5vw;
+}
+
+.search {
+    display: flex;
+    column-gap: 2vw;
+}
+
+input {
+    width: 50vw;
+}
+
+.weather {
+    background-color: rgb(77, 139, 190);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.today {
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+}
+
+p {
+    margin: 0;
+}
