@@ -8,13 +8,13 @@
     <title>Weather App</title>
 </head>
 <body>
-    <button class="unit">Celsius</button>
     <form action="" method="post">
         <div class="search">
             <label for="location">Location</label>
             <input type="text" name="location" id="location" required>
         </div>
         <button class="submit" type="submit">Get weather</button>
+        <button class="unitToggle">Celsius</button>
     </form>
     <p id="city"></p>
     <div class="weather">
@@ -23,8 +23,8 @@
                 <p id="today">Today</p>
                 <div id="info">
                     <p id="text"></p>
-                    <p id="mintemp"></p>
-                    <p id="maxtemp"></p>
+                    <p id="mintemp"><span class="type">Minimum temperature: </span><span class="temp"></span><span class="unit"></span></p>
+                    <p id="maxtemp"><span class="type">Maximum temperature: </span><span class="temp"></span><span class="unit"></span></p>
                 </div>
             </div>
             <div class="center">
@@ -32,19 +32,39 @@
             </div>
             <div class="right">
                 <p id="time"></p>
-                <p id="temp"></p>
+                <p id="temp"><span class="temp"></span><span class="unit"></span></p>
             </div>
         </div>
         <div class="forecast">
             <div class="one">
+                <p class="date"></p>
+                <img class="icon">
+                <p><span class="temp"></span><span class="unit"></span></p>
+                <p class="text"></p>
             </div>
             <div class="two">
+                <p class="date"></p>
+                <img class="icon">
+                <p><span class="temp"></span><span class="unit"></span></p>
+                <p class="text"></p>
             </div>
             <div class="three">
+                <p class="date"></p>
+                <img class="icon">
+                <p><span class="temp"></span><span class="unit"></span></p>
+                <p class="text"></p>
             </div>
             <div class="four">
+                <p class="date"></p>
+                <img class="icon">
+                <p><span class="temp"></span><span class="unit"></span></p>
+                <p class="text"></p>
             </div>
             <div class="five">
+                <p class="date"></p>
+                <img class="icon">
+                <p><span class="temp"></span><span class="unit"></span></p>
+                <p class="text"></p>
             </div>
         </div>
     </div>
