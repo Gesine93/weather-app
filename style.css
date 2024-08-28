@@ -51,6 +51,7 @@ form {
     justify-content: space-between;
     column-gap: 5vw;
     color: black;
+    align-items: center;
 }
 
 .search {

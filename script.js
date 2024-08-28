@@ -128,11 +128,11 @@ function getIcon(data) {
     }
 }
 
-function celsiusToFahrenheit(data, element) {
+function fahrenheitToCelsius(data, element) {
     element.textContent=data;
 }
 
-function fahrenheitToCelsius(temp, element) {
+function celsiusToFahrenheit(temp, element) {
     tempNew = parseFloat((parseFloat(temp)-32)/(9/5)).toFixed(1);
     element.textContent=tempNew;
 }
@@ -173,27 +173,56 @@ document.addEventListener('DOMContentLoaded', async() => {
     const unitButton = document.querySelector(".unitToggle");
     unitButton.addEventListener("click", async (e) => {
         e.preventDefault();
-
+        
         let unit = unitButton.textContent;
         let maxtemptoday = document.querySelector(".today > .left > #info > #maxtemp > .temp");
-        let mintemptoday = document.querySelector(".today > .left > #info > #mintemp> .temp");
-        let tempnow = document.querySelector(".today > .right > #temp> .temp");
+        let mintemptoday = document.querySelector(".today > .left > #info > #mintemp > .temp");
+        let tempnow = document.querySelector(".today > .right > #temp > .temp");
+
+        // Five-day forecast temperature elements
+        let one_temp = document.querySelector(".one .temp");
+        let two_temp = document.querySelector(".two .temp");
+        let three_temp = document.querySelector(".three .temp");
+        let four_temp = document.querySelector(".four .temp");
+        let five_temp = document.querySelector(".five .temp");
 
         let city = document.querySelector("#city");
         let data = await getWeather(city.textContent);
+
         let maxtemptodaydata = data.days[0].tempmax;
         let mintemptodaydata = data.days[0].tempmin;
         let tempnowdata = data.days[0].temp;
+
+        // Retrieve temperatures for the five-day forecast
+        let one_temp_data = data.days[1].temp;
+        let two_temp_data = data.days[2].temp;
+        let three_temp_data = data.days[3].temp;
+        let four_temp_data = data.days[4].temp;
+        let five_temp_data = data.days[5].temp;
         if (unit === "Celsius") {
-            celsiusToFahrenheit(tempnowdata,tempnow);
-            celsiusToFahrenheit(mintemptodaydata,mintemptoday);
-            celsiusToFahrenheit(maxtemptodaydata,maxtemptoday);
+            celsiusToFahrenheit(tempnowdata, tempnow);
+            celsiusToFahrenheit(mintemptodaydata, mintemptoday);
+            celsiusToFahrenheit(maxtemptodaydata, maxtemptoday);
+
+            // Convert the five-day forecast temperatures
+            celsiusToFahrenheit(one_temp_data, one_temp);
+            celsiusToFahrenheit(two_temp_data, two_temp);
+            celsiusToFahrenheit(three_temp_data, three_temp);
+            celsiusToFahrenheit(four_temp_data, four_temp);
+            celsiusToFahrenheit(five_temp_data, five_temp);
             changeUnit("C");
             unitButton.textContent = "Fahrenheit";
         } else {
-            fahrenheitToCelsius(tempnowdata,tempnow);
-            fahrenheitToCelsius(mintemptodaydata,mintemptoday);
-            fahrenheitToCelsius(maxtemptodaydata,maxtemptoday);
+            fahrenheitToCelsius(tempnowdata, tempnow);
+            fahrenheitToCelsius(mintemptodaydata, mintemptoday);
+            fahrenheitToCelsius(maxtemptodaydata, maxtemptoday);
+
+            // Convert the five-day forecast temperatures
+            fahrenheitToCelsius(one_temp_data, one_temp);
+            fahrenheitToCelsius(two_temp_data, two_temp);
+            fahrenheitToCelsius(three_temp_data, three_temp);
+            fahrenheitToCelsius(four_temp_data, four_temp);
+            fahrenheitToCelsius(five_temp_data, five_temp);
             changeUnit("F");
             unitButton.textContent = "Celsius";
         }
