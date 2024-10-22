@@ -49,6 +49,3 @@ To use the app, you will need an API key from [Visual Crossing](https://www.visu
 - [ ] Implement location-based weather (using the Geolocation API).
 - [ ] Improve UI/UX with animations and icons.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
